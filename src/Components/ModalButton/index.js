@@ -17,8 +17,10 @@ function ModalButton({ id, name, onClick }) {
 
     async function getRecipeInfo(id) {
         let response = await fetch(
-					`https://api.spoonacular.com/recipes/${id}/information?apiKey=1e0627209aa14f53a49187d72790693f`
-				);
+
+            `https://api.spoonacular.com/recipes/${id}/information?apiKey=1e0627209aa14f53a49187d72790693f`
+        );
+
         let data = await response.json();
         console.log("Summary: ", data.summary); // string + html ?
         console.log("Ingredients: ", data.extendedIngredients); // array of obj
@@ -35,7 +37,9 @@ function ModalButton({ id, name, onClick }) {
 			<>
 				<Button
 					colorScheme="teal"
+                    className="modal-button"
 					variant="outline"
+                    color="white"
 					onClick={() => {
 						onOpen();
 						getRecipeInfo(id);

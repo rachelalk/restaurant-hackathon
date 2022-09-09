@@ -9,7 +9,10 @@ function Basket() {
 		<>
 			<main>
 				<h2>Basket</h2>
-				{basket2.map(item => <p>{item}</p>)}
+				<ul>
+				{basket2.map(item => <li>{item}</li>)}
+
+				</ul>
 			</main>
 		</>
 	);
