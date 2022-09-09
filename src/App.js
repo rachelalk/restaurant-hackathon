@@ -8,7 +8,12 @@ import Menu from "./Components/Menu";
 function App() {
 	return (
 		<div className="App">
-			<h1>Welcome to React Router!</h1>
+			<h1>Welcome to Restaurant Name !</h1>
+            <nav>
+                <Link to="/">Homepage</Link>
+                <Link to="/menu">Menu</Link>
+                <Link to="/basket">Basket</Link>
+            </nav>
 			<Routes>
 				<Route path="/" element={<Homepage />} />
 				<Route path="menu" element={<Menu />} />
