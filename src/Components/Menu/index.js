@@ -6,7 +6,9 @@ function Menu({ recipes, setRecipes, basketItems, setBasketItems }) {
 	useEffect(() => {
 		async function getRecipesOnLoad() {
 			let response = await fetch(
+
 				"https://api.spoonacular.com/recipes/complexSearch?apiKey=1e0627209aa14f53a49187d72790693f&cuisine=thai&number=10"
+
 			);
 			// console.log("response: ", response);
 			let data = await response.json();
