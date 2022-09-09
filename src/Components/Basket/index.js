@@ -1,11 +1,15 @@
 
 
 function Basket() {
+	const basket = localStorage.getItem('basket');
+	console.log(typeof basket);
+	let basket2 = basket.split(',')
+	console.log(basket2);
 	return (
 		<>
 			<main>
 				<h2>Basket</h2>
-				<p>That feels like an existential question, don't you think?</p>
+				{basket2.map(item => <p>{item}</p>)}
 			</main>
 		</>
 	);

@@ -17,7 +17,7 @@ function ModalButton({ id }) {
 
     async function getRecipeInfo(id) {
         let response = await fetch(
-            `https://api.spoonacular.com/recipes/${id}/information?apiKey=4f148a4f43724f62aa67a95e9335cd75`
+            `https://api.spoonacular.com/recipes/${id}/information?apiKey=6e01c17df2c54f8ca7aa69d7b711aa7d`
         );
         let data = await response.json();
         console.log("Summary: ", data.summary); // string + html ?
