@@ -6,7 +6,7 @@ function Menu({ recipes, setRecipes, basketItems, setBasketItems }) {
 	useEffect(() => {
 		async function getRecipesOnLoad() {
 			let response = await fetch(
-				"https://api.spoonacular.com/recipes/complexSearch?apiKey=6e01c17df2c54f8ca7aa69d7b711aa7d&cuisine=thai&number=2"
+				"https://api.spoonacular.com/recipes/complexSearch?apiKey=6e01c17df2c54f8ca7aa69d7b711aa7d&cuisine=thai&number=10"
 			);
 			// console.log("response: ", response);
 			let data = await response.json();
@@ -30,8 +30,8 @@ function Menu({ recipes, setRecipes, basketItems, setBasketItems }) {
 	return (
 		<>
 			<main>
-				<h2>Menu</h2>
-				<div>
+				{/* <h2>Menu</h2> */}
+				<div className="recipes">
 					{recipes ? (
 						recipes.map((recipe) => {
 							return (

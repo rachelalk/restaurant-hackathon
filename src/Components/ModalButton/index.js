@@ -35,7 +35,9 @@ function ModalButton({ id, name, onClick }) {
 			<>
 				<Button
 					colorScheme="teal"
+                    className="modal-button"
 					variant="outline"
+                    color="white"
 					onClick={() => {
 						onOpen();
 						getRecipeInfo(id);
