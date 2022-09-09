@@ -1,25 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import AddButton from "../Button";
 import ModalButton from "../ModalButton";
 
-function Menu() {
-    const [recipes, setRecipes] = useState([]);
-    const [basketItems, setBasketItems] = useState([]);
+function Menu({recipes, setRecipes, basketItems, setBasketItems }) {
+    
     useEffect(() => {
         async function getRecipesOnLoad() {
             let response = await fetch(
                 "https://api.spoonacular.com/recipes/complexSearch?apiKey=6e01c17df2c54f8ca7aa69d7b711aa7d&cuisine=thai&number=2"
             );
-            console.log("response: ", response);
+            // console.log("response: ", response);
             let data = await response.json();
-            console.log("data: ", data);
+            // console.log("data: ", data);
             let results = data.results;
-            console.log("results: ", results);
+            // console.log("results: ", results);
             setRecipes(results);
             return results;
         }
         getRecipesOnLoad();
-    }, []);
+    }, [setRecipes]);
 
     function addtoBasket(itemName) {
         console.log("item name:", itemName);
