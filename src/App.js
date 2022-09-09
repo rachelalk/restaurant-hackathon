@@ -21,7 +21,7 @@ function App() {
 	return (
 		<ChakraProvider>
 			<div className="App">
-				<h1>Welcome to Restaurant Name !</h1>
+				<h1>Welcome to our tantalising Thai takeout !</h1>
 				<nav>
 					<Link to="/">Homepage</Link>
 					<Link to="/menu">Menu</Link>
