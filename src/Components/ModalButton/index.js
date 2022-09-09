@@ -12,7 +12,7 @@ import {
 
 import { useState } from "react";
 
-function ModalButton({ id }) {
+function ModalButton({ id, name, onClick }) {
     const [summary, setSummary] = useState("");
 
     async function getRecipeInfo(id) {
@@ -32,34 +32,38 @@ function ModalButton({ id }) {
 
     const { isOpen, onOpen, onClose } = useDisclosure();
     return (
-        <>
-            <Button
-                onClick={() => {
-                    onOpen();
-                    getRecipeInfo(id);
-                }}
-            >
-                Open Modal
-            </Button>
+			<>
+				<Button
+					colorScheme="teal"
+					variant="outline"
+					onClick={() => {
+						onOpen();
+						getRecipeInfo(id);
+					}}
+				>
+					Open Modal
+				</Button>
 
-            <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>Modal Title</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody>
-                        <div dangerouslySetInnerHTML={createMarkup()}></div>
-                    </ModalBody>
+				<Modal isOpen={isOpen} onClose={onClose}>
+					<ModalOverlay />
+					<ModalContent>
+						<ModalHeader>{name}</ModalHeader>
+						<ModalCloseButton />
+						<ModalBody>
+							<div dangerouslySetInnerHTML={createMarkup()}></div>
+						</ModalBody>
 
-                    <ModalFooter>
-                        <Button colorScheme="blue" mr={3} onClick={onClose}>
-                            Close
-                        </Button>
-                        <Button variant="ghost">Secondary Action</Button>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal>
-        </>
-    );
+						<ModalFooter>
+							<Button colorScheme="teal" variant="solid" onClick={onClick}>
+								Add to Basket
+							</Button>
+							<Button colorScheme="teal" variant="outline" onClick={onClose}>
+								Close
+							</Button>
+						</ModalFooter>
+					</ModalContent>
+				</Modal>
+			</>
+		);
 }
 export default ModalButton;
