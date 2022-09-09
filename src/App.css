@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 16pt;
 }
 
 .App-logo {
@@ -26,6 +28,72 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App {
+  background: url(./Components/Homepage/bg.jpg);
+  background-size: cover;
+  min-height: 100vh;
+  /* height: 100vh; */
+  /* margin-top: -100px; */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+
+nav > a {
+  width: 150px;
+}
+
+.home-menu { 
+  top: 40vh;
+  font-size: 30pt;
+}
+
+main {
+  margin-top: 20px;
+}
+
+.home-bg {
+  
+  min-height: 60vh;
+}
+
+.home-bg  > h1 {
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 20pt;
+}
+
+.modal-button:hover{
+  color: black;
+}
+
+.recipes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipes > div {
+  margin-bottom: 50px;
+  font-weight: bold;
+  text-decoration-color: black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+main > h2 {
+  text-decoration: underline;
+  font-size: 20pt;
+  margin-bottom: 30px;
 }
 
 @keyframes App-logo-spin {
