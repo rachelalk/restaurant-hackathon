@@ -11,6 +11,8 @@ function App() {
 	const [recipes, setRecipes] = useState([]);
 	const [basketItems, setBasketItems] = useState([]);
 
+	
+
 	// console.log(basketItems);
 
 	useEffect (() => {if (localStorage.getItem("basket")) {

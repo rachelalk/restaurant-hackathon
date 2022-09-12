@@ -3,11 +3,14 @@ import AddButton from "../Button";
 import ModalButton from "../ModalButton";
 
 function Menu({ recipes, setRecipes, basketItems, setBasketItems }) {
+
+	const API_Key = process.env.REACT_APP_API_KEY;
+	
 	useEffect(() => {
 		async function getRecipesOnLoad() {
 			let response = await fetch(
 
-				"https://api.spoonacular.com/recipes/complexSearch?apiKey=1e0627209aa14f53a49187d72790693f&cuisine=thai&number=10"
+				`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_Key}&cuisine=thai&number=10`
 
 			);
 			// console.log("response: ", response);
